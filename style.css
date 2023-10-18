@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #666666;
+  font-family: "Montserrat", sans-serif;
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+  line-height: 1px;
+}
+
+.text-primary {
+  color: #666666;
+}
+
+.text-blue {
+  color: #246dec;
+}
+
+.text-red {
+  color: #cc3c43;
+}
+
+.text-green {
+  color: #367952;
+}
+
+.text-orange {
+  color: #f5b74f;
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 0fr 3fr;
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar main main main";
+}
+
+/*header*/
+.header {
+  grid-area: header;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+  display: none;
+}
+
+/*Slidebar*/
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  width: 150px;
+  background-color: black;
+  color: white;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-title > span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin-top: 15px;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px #3c3b3b solid;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #9799ab;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  z-index: 12 !important;
+}
+
+/*Main*/
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+/*  padding: 20px 20px;*/
+  background-color: #fff;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.main-container .logo{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.main-container .logo img{
+  width: 20%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-container .content{
+  margin-top: 25px;
+ background-color: #ccc;
+ display: flex;
+ justify-content: center;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+.main-container .content-child{
+  width: 800px;
+  text-align: center;
+}
+.main-container .content-child h1{
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+.main-container .content-child p{
+  font-size: 16px;
+  color: #333;
+}
+
+
+.list-lorem {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+    margin-right: 0;
+    flex-wrap: wrap;
+}
+
+.list-lorem .column {
+    flex-basis: calc(33.33% - 10px);
+    text-align: justify;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.list-lorem .column img{
+    width: 20%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.list-lorem .float-left {
+    float: left;
+    margin-right: 10px;
+}
+
+.list-lorem h1{
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+}
+.list-lorem p{
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.footer {
+    margin-top: 90px;
+    padding: 20px 0;
+    border-top: 1px #ccc solid;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.container p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+
+/* Styles cho máy tính bảng */
+@media screen and (max-width: 991px) and (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #sidebar {
+    display: block;
+    position: fixed;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .main-container {
+    margin-left: 0px;
+    margin-right: 50px;
+  }
+
+  .list-lorem .column {
+    flex-basis: calc(100% - 10px);
+  }
+}
+
+/* Styles cho điện thoại */
+@media screen and (max-width: 575px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  #sidebar {
+    width: 90px;
+    position: fixed;
+  }
+
+  #sidebar a{
+    font-size: 14px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .main-container {
+    margin-left: 110px;
+    margin-right: 20px;
+  }
+
+  .list-lorem .column {
+    flex-basis: calc(100% - 10px);
+  }
+}
